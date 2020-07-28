@@ -6,7 +6,9 @@
     >
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Title</v-toolbar-title>
+      <v-toolbar-title>
+        <v-img src="@/../public/codeweb.png" aspect-ratio="4.7" width="150px"></v-img>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -15,16 +17,58 @@
         <span>INICIO</span>
       </v-btn>
 
-      <v-btn text>
-        link
-        <!-- <span>Prueba</span>
-        <v-icon>expand_more</v-icon> -->
-      </v-btn>
+
+      <!-- ddddddddddddddddddddyyyyyyyyyyyyyyyyyyyydddddddddddddddddddddd -->
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }" class="bg">
+        <v-btn 
+        flat
+        text
+        v-bind="attrs"
+        v-on="on"
+        >
+          <v-icon left>expand_more</v-icon>
+          <span>SERVICIOS</span>
+        </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item 
+          v-for="(item, index) in servicios" :key="index" 
+          router :to="item.route"
+          class="width ">
+            <v-list-item-title>{{item.title}}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }" class="bg">
+        <v-btn 
+        flat
+        text
+        v-bind="attrs"
+        v-on="on"
+        >
+          <v-icon left>expand_more</v-icon>
+          <span>Nosotros</span>
+        </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item 
+          v-for="(item, index) in nosotros" :key="index" 
+          router :to="item.route"
+          class="width ">
+            <v-list-item-title>{{item.title}}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <v-btn text>
-        <span>Prueba</span>
-        <v-icon>expand_more</v-icon>
+        <span>contacto</span>
       </v-btn>
+
       </v-toolbar-items>
     </v-app-bar>
 
@@ -37,12 +81,9 @@
 >
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title">
-            Application
+          <v-list-item-title class="title ml-7">
+            <v-img src="@/../public/codeweb.png" aspect-ratio="4.7" width="160px"></v-img>
           </v-list-item-title>
-          <v-list-item-subtitle>
-            subtext
-          </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -65,6 +106,32 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+      <v-list-group
+        v-for="item in drawerItems"
+        :key="item.title"
+        v-model="item.active"
+        :prepend-icon="item.action"
+        no-action
+      >
+        <template v-slot:activator>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title"></v-list-item-title>
+          </v-list-item-content>
+        </template>
+
+        <v-list-item
+          v-for="subItem in item.items"
+          :key="subItem.title"
+          @click="subItem.route"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="subItem.title"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-group>
+    
+
       </v-list>
     </v-navigation-drawer>
 
@@ -77,12 +144,56 @@
 
     data: () => ({
       drawer: null,
-      items: [
-          { title: 'Dashboard', icon: 'dashboard' },
-          { title: 'Photos', icon: 'image' },
-          { title: 'About', icon: 'help' },
+
+      drawerItems: [
+          {
+            action: 'design_services',
+            title: 'SERVICIOS',
+            items: [
+              {title: 'Desarrollo web', route: '/' },
+              {title: 'Analisis de datos', route: '/data' },
+              {title: 'Landing Pages', route: '/landing-pages' },
+              {title: 'Diseño de Logos', route: '/marca' },
+              {title: 'Diseño Grafico', route: '/design' },
+              {title: 'Marketing digital', route: '/marketing' }
+            ],
+          },
+          {
+            action: 'group',
+            title: 'NOSOTROS',
+            items: [
+              {title: "Nuestro equipo", route: '/equipo'},
+              {title: "Portafolio", route: 'portafolio'},
+            ],
+          },
         ],
+
+
+
+      items: [
+          { title: 'INICIO', icon: 'home' },
+          { title: 'CONTACTO', icon: 'call' },
+        ],
+        servicios: [
+          {title: 'Desarrollo web', route: '/' },
+          {title: 'Analisis de datos', route: '/data' },
+          {title: 'Landing Pages', route: '/landing-pages' },
+          {title: 'Diseño de Logos', route: '/marca' },
+          {title: 'Diseño Grafico', route: '/design' },
+          {title: 'Marketing digital', route: '/marketing' }
+        ],
+        nosotros: [
+         {title: "Nuestro equipo", route: '/equipo'},
+         {title: "Portafolio", route: 'portafolio'},
+        ],
+
         right: null,
       }),
   }
 </script>
+
+<style scoped>
+    .width{
+      text-align: right;
+    }
+</style>
