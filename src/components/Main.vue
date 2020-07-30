@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
       <v-row align="center">
-          <v-col class="text-center style" cols="12" md="6" >
-            <h1 class=" text-center">Desarrollo web</h1>
+          <v-col class="text-center" cols="12" md="6" >
+            <h1 >Desarrollo web</h1>
             <p class="mb-0">desarrollo de sitios web</p>
             <p>y análisis de datos</p>
             <v-btn depressed>Solicitar Web</v-btn>

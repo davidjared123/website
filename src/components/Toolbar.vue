@@ -11,6 +11,7 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <!-- menu -->
 
       <v-toolbar-items class="hidden-sm-and-down">
       <v-btn text>
@@ -18,7 +19,6 @@
       </v-btn>
 
 
-      <!-- ddddddddddddddddddddyyyyyyyyyyyyyyyyyyyydddddddddddddddddddddd -->
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }" class="bg">
         <v-btn 
