@@ -103,6 +103,7 @@
           v-for="item in items"
           :key="item.title"
           link
+          :to="item.route"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -177,8 +178,8 @@
 
 
       items: [
-          { title: 'INICIO', icon: 'home' },
-          { title: 'CONTACTO', icon: 'call' },
+          { title: 'INICIO', icon: 'home', route: '/' },
+          { title: 'CONTACTO', icon: 'call', route: '/contacto' },
         ],
         servicios: [
           {title: 'Desarrollo web', route: '/desarrollo-web' },
