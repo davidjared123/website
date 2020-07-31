@@ -14,7 +14,10 @@
       <!-- menu -->
 
       <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn text>
+      <v-btn 
+      text
+      to="/"
+      >
         <span>INICIO</span>
       </v-btn>
 
@@ -65,7 +68,10 @@
         </v-list>
       </v-menu>
 
-      <v-btn text>
+      <v-btn 
+      text
+      to="contacto"
+      >
         <span>contacto</span>
       </v-btn>
 
@@ -123,7 +129,7 @@
         <v-list-item
           v-for="subItem in item.items"
           :key="subItem.title"
-          @click="subItem.route"
+          :to="subItem.route"
         >
           <v-list-item-content>
             <v-list-item-title v-text="subItem.title"></v-list-item-title>
@@ -150,11 +156,11 @@
             action: 'design_services',
             title: 'SERVICIOS',
             items: [
-              {title: 'Desarrollo web', route: '/' },
-              {title: 'Analisis de datos', route: '/data' },
-              {title: 'Landing Pages', route: '/landing-pages' },
-              {title: 'Diseño de Logos', route: '/marca' },
-              {title: 'Diseño Grafico', route: '/design' },
+              {title: 'Diseño Web', route: '/desarrollo-web'},
+              {title: 'Landing Pages', route: '/landing-page' },
+              {title: 'Analisis de datos', route: '/analisis-de-datos' },
+              {title: 'Diseño de Marca', route: '/diseño-de-marca' },
+              {title: 'Diseño Grafico', route: '/diseño-grafico' },
               {title: 'Marketing digital', route: '/marketing' }
             ],
           },
@@ -175,11 +181,11 @@
           { title: 'CONTACTO', icon: 'call' },
         ],
         servicios: [
-          {title: 'Desarrollo web', route: '/' },
-          {title: 'Analisis de datos', route: '/data' },
-          {title: 'Landing Pages', route: '/landing-pages' },
-          {title: 'Diseño de Logos', route: '/marca' },
-          {title: 'Diseño Grafico', route: '/design' },
+          {title: 'Desarrollo web', route: '/desarrollo-web' },
+          {title: 'Analisis de datos', route: '/analisis-de-datos' },
+          {title: 'Landing Pages', route: '/landing-page' },
+          {title: 'Diseño de Marca', route: '/diseño-de-marca' },
+          {title: 'Diseño Grafico', route: '/diseño-grafico' },
           {title: 'Marketing digital', route: '/marketing' }
         ],
         nosotros: [

@@ -10,7 +10,7 @@
           style="height: 100vh;"
         >
           
-            <h1 >HOLA</h1>
+            <h1>Diseño de marca 'LOGOS'</h1>
           
          
         </v-row>
@@ -45,27 +45,11 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        alignmentsAvailable: [
-          'start',
-          'center',
-          'end',
-          'baseline',
-          'stretch',
-        ],
-        alignment: 'center',
-        dense: false,
-        justifyAvailable: [
-          'start',
-          'center',
-          'end',
-          'space-around',
-          'space-between',
-        ],
-        justify: 'center',
-      }
-    },
-  }
+export default {
+
+}
 </script>
+
+<style>
+
+</style>
