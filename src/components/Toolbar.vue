@@ -158,7 +158,6 @@
             title: 'SERVICIOS',
             items: [
               {title: 'Diseño Web', route: '/desarrollo-web'},
-              {title: 'Landing Pages', route: '/landing-page' },
               {title: 'Analisis de datos', route: '/analisis-de-datos' },
               {title: 'Diseño de Marca', route: '/diseño-de-marca' },
               {title: 'Diseño Grafico', route: '/diseño-grafico' },
@@ -184,7 +183,6 @@
         servicios: [
           {title: 'Desarrollo web', route: '/desarrollo-web' },
           {title: 'Analisis de datos', route: '/analisis-de-datos' },
-          {title: 'Landing Pages', route: '/landing-page' },
           {title: 'Diseño de Marca', route: '/diseño-de-marca' },
           {title: 'Diseño Grafico', route: '/diseño-grafico' },
           {title: 'Marketing digital', route: '/marketing' }
